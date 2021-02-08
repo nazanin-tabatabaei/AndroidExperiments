@@ -1,0 +1,32 @@
+{#- This is a Jinja template - Flask uses Jinja as its templating engine. Jinja
+    will process this file looking for directives to define a template based on
+    the passed-in variables. This template relies on the `table`, `header`, and
+    `username` variables to be declared.
+    
+    A Jinja directive will start with a "{%" and Jinja comments will begin with
+    a "{#". Both are ended with the same symbol and the closing brace "}".
+    
+    If a dash "-" is provided before the opening or closing symbol for a
+    directive, Jinja will ignore all whitespace up to that side of the directive
+    in the template. -#}
+<!doctype html>
+<html>
+<head>
+  <title>Flask Example</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <h1>messages</h1>
+  {%- for dat in data %}
+        <p>{{ dat }}</p>
+  {%- endfor %}
+  <h1>Python messages</h1>
+  {%- for dat in datapy %}
+      <p>{{ dat }}</p>
+  {%- endfor %}
+  
+</body>
+
+</html>
+
